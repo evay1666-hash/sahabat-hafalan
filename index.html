@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sahabat Hafalan — Pendamping Hafalan Al-Qur’an</title>
+<meta name="description" content="Website pendamping hafalan Al-Qur’an: sembunyikan ayat, kuis, progres, dan murojaah.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Katibeh&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#/home"><span class="logo">۞</span> Sahabat Hafalan</a>
+  <nav>
+    <a data-p="home" href="#/home">Beranda</a>
+    <a data-p="surat" href="#/surat">Surat</a>
+    <a data-p="kuis" href="#/kuis">Kuis</a>
+    <a data-p="progres" href="#/progres">Progres</a>
+    <a data-p="tips" href="#/tips">Adab</a>
+    <a data-p="tentang" href="#/tentang">Tentang</a>
+  </nav>
+  <div class="tools">
+    <a id="hdrAcc" class="acc" href="#/akun">Masuk</a>
+    <button id="fsm" aria-label="Kecilkan huruf Arab">A−</button>
+    <button id="fsp" aria-label="Besarkan huruf Arab">A+</button>
+    <button id="theme" aria-label="Ganti mode terang atau gelap">🌙</button>
+  </div>
+</header>
+
+<main>
+  <section id="home">
+    <div class="hero">
+      <p class="bism" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+      <p class="src">Dengan nama Allah Yang Maha Pengasih, Maha Penyayang</p>
+      <h1>Menghafal Al-Qur’an, sedikit demi sedikit, bersama-sama.</h1>
+      <p>Pilih surat, sembunyikan ayat untuk menguji ingatan, kerjakan kuis, lalu catat progres dan murojaah harianmu.</p>
+      <a class="btn gold" href="#/surat">Mulai menghafal</a>
+      <a class="btn ghost" href="#/hafalan/112">Coba Al-Ikhlas</a>
+    </div>
+    <div class="grid3">
+      <div class="card"><h3>Ayat/hadis hari ini</h3><div id="daily"></div></div>
+      <div class="card"><h3>Hari berturut-turut</h3><p class="num" id="hStreak">0</p><p>hari menghafal atau murojaah tanpa putus.</p></div>
+      <div class="card"><h3>Target hari ini</h3><div class="bar"><i id="hBar"></i></div><p id="hTarget"></p></div>
+    </div>
+  </section>
+
+  <section id="surat" hidden>
+    <h2>Daftar Surat</h2>
+    <div class="row">
+      <input id="q" type="search" placeholder="Cari surat, mis. Ikhlas atau 112" aria-label="Cari surat">
+      <label class="chk"><input id="j30" type="checkbox" checked> Juz 30 saja</label>
+    </div>
+    <p id="note" class="note" hidden></p>
+    <div id="list" class="grid3"></div>
+  </section>
+
+  <section id="hafalan" hidden></section>
+
+  <section id="kuis" hidden>
+    <h2>Kuis Hafalan</h2>
+    <div id="quiz"></div>
+  </section>
+
+  <section id="progres" hidden>
+    <h2>Progres &amp; Murojaah</h2>
+    <div id="prog"></div>
+  </section>
+
+  <section id="tips" hidden>
+    <h2>Adab &amp; Tips Menghafal</h2>
+    <div class="grid3">
+      <div class="card"><h3>Luruskan niat</h3><p>Menghafal karena Allah, bukan untuk pamer. Niat yang lurus menjaga semangat saat terasa berat.</p></div>
+      <div class="card"><h3>Pilih waktu terbaik</h3><p>Banyak penghafal memilih waktu setelah Subuh karena pikiran masih segar. Pilih waktu yang paling cocok denganmu.</p></div>
+      <div class="card"><h3>Sedikit tapi rutin</h3><p>Mulai dari 1–3 ayat per hari. Konsisten lebih penting daripada banyak tapi berhenti di tengah jalan.</p></div>
+      <div class="card"><h3>Ulangi sebelum menambah</h3><p>Murojaah hafalan lama dulu sebelum menambah ayat baru agar tidak mudah lupa.</p></div>
+      <div class="card"><h3>Setor ke guru (talaqqi)</h3><p>Website ini hanya alat bantu. Bacaan dan tajwid tetap perlu diperiksa langsung oleh guru atau ustaz.</p></div>
+      <div class="card"><h3>Berdoa</h3><p>Mintalah kemudahan kepada Allah, dan pahami arti ayat agar hafalan lebih melekat.</p></div>
+    </div>
+  </section>
+
+  <section id="akun" hidden>
+    <h2>Akun</h2>
+    <div id="accBox"></div>
+  </section>
+
+  <section id="tentang" hidden>
+    <h2>Tentang Kami</h2>
+    <div class="card prose">
+      <p><b>Sahabat Hafalan</b> adalah proyek dakwah digital: memanfaatkan media web agar siapa saja bisa belajar menghafal Al-Qur’an kapan pun dan di mana pun, dengan cara yang mengajak, bukan menggurui.</p>
+      <p><b>Sumber teks.</b> Teks Arab (Uthmani), terjemahan Indonesia, dan bacaan Latin dimuat dari layanan terbuka <a href="https://alquran.cloud" target="_blank" rel="noopener">Al Quran Cloud</a>. Enam surat pendek (Al-Fatihah, Al-Ikhlas, Al-Falaq, An-Nas, Al-Kautsar, An-Nasr) juga tersimpan di website sebagai cadangan saat offline. Terjemahan mengikuti Kemenag RI.</p>
+      <p><b>Mohon dicek.</b> Sebelum dipakai luas, minta guru atau ustaz memeriksa tampilan ayat.</p>
+      <p><b>Privasi.</b> Akun dan progres hanya disimpan di browser perangkatmu (Local Storage). Belum ada server, jadi tidak ada data yang dikirim ke kami. Karena itu akun hanya berlaku di browser dan alamat website yang sama.</p>
+      <p><b>Tim:</b> isi dengan nama anggota kelompok kalian.</p>
+    </div>
+  </section>
+</main>
+
+<footer>Dibuat untuk tugas Dakwah Digital · Barakallahu fikum 🌙</footer>
+<script src="app.js"></script>
+</body>
+</html>
